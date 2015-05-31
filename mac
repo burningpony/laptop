@@ -200,6 +200,29 @@ gem_install_or_update 'bundler'
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
 
+brew_tap 'caskroom/cask'
+brew_install_or_upgrade 'brew-cask'
+
+brew cask install dropbox
+brew cask install google-chrome
+brew cask install atom
+brew cask install sublime-text3
+brew-cask install bittorrent-sync
+brew-cask install chrome-remote-desktop-host
+brew-cask install evernote
+brew-cask install slack
+brew-cask install sourcetree
+brew-cask install 1password
+brew-cask install iterm
+
+mkdir ~/code
+
+append_to_zshrc "c() { cd ~/code/$1; }
+_c() { _files -W ~/code -/; }
+compdef _c c"
+
+append_to_zshrc "alias be='bundle exec'"
+
 if [ -f "$HOME/.laptop.local" ]; then
   fancy_echo "Running your customizations from ~/.laptop.local ..."
   # shellcheck disable=SC1090
