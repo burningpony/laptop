@@ -244,16 +244,17 @@ brew_tap 'caskroom/cask'
 brew_tap 'caskroom/versions'
 brew_install_or_upgrade 'brew-cask'
 
+fancy_echo "Installing Cask Apps"
 brew_cask_install_or_upgrade dropbox
 brew_cask_install_or_upgrade google-chrome
 brew_cask_install_or_upgrade atom
 brew_cask_install_or_upgrade sublime-text3
 brew_cask_install_or_upgrade bittorrent-sync
-brew_cask_install_or_upgrade chrome-remote-desktop-host
 brew_cask_install_or_upgrade evernote
 brew_cask_install_or_upgrade slack
 brew_cask_install_or_upgrade sourcetree
 brew_cask_install_or_upgrade 1password
+brew_cask_install_or_upgrade screenhero
 brew_cask_install_or_upgrade iterm2-beta
 append_to_zshrc "test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh"
 
