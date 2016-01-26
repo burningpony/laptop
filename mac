@@ -258,13 +258,15 @@ brew_cask_install_or_upgrade screenhero
 brew_cask_install_or_upgrade iterm2-beta
 append_to_zshrc "test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh"
 
-mkdir -p ~/code
 
+fancy_echo "Creating Code Directory"
+mkdir -p ~/code
 append_to_zshrc "c() { cd ~/code/\$1; }
 _c() { _files -W ~/code -/; }
 compdef _c c"
 
 append_to_zshrc "alias be='bundle exec'"
+append_to_zshrc "alias st='subl -a'"
 
 npm install -g bower
 npm install -g grunt
